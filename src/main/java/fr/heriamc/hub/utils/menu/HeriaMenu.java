@@ -1,27 +1,24 @@
-package fr.heriamc.core.utils.ui;
+package fr.heriamc.hub.utils.menu;
 
-import fr.heriamc.tools.ItemBuilder;
-import lombok.Getter;
+import fr.heriamc.hub.utils.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.ClickType;
-import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.event.inventory.*;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public abstract class HeriaMenu implements InventoryHolder {
 
-    private final @Getter Player player;
+    private final Player player;
     private final String name;
     private final int size;
     private final InventoryType type;
-    private final @Getter boolean update;
-    private final @Getter boolean cancelled;
+    private final boolean update;
 
     public HeriaMenu(Player player, String name, int size, boolean update) {
         this.player = player;
@@ -29,7 +26,6 @@ public abstract class HeriaMenu implements InventoryHolder {
         this.size = size;
         this.type = null;
         this.update = update;
-        this.cancelled = true;
     }
 
     public HeriaMenu(Player player, String name, InventoryType type, boolean update) {
@@ -38,40 +34,52 @@ public abstract class HeriaMenu implements InventoryHolder {
         this.size = 0;
         this.type = type;
         this.update = update;
-        this.cancelled = true;
     }
 
-    public HeriaMenu(Player player, String name, int size, boolean update, boolean cancelled) {
-        this.player = player;
-        this.name = name;
-        this.size = size;
-        this.type = null;
-        this.update = update;
-        this.cancelled = cancelled;
+    public Player getPlayer() {
+        return player;
     }
 
-    public HeriaMenu(Player player, String name, InventoryType type, boolean update, boolean cancelled) {
-        this.player = player;
-        this.name = name;
-        this.size = 0;
-        this.type = type;
-        this.update = update;
-        this.cancelled = cancelled;
+    public boolean isUpdate() {
+        return update;
     }
 
     public abstract void contents(Inventory inv);
 
-    public abstract void onClick(ItemStack item, int slot, ClickType click);
+    public void onClick(InventoryClickEvent event){
+
+    }
+
+    public void onDrag(InventoryDragEvent event){
+
+    }
+
+    public void onDrop(PlayerDropItemEvent event){
+
+    }
+
+    public void onClose(InventoryCloseEvent event){
+
+    }
+
 
     public void setBorder(Inventory inv, int data){
         this.setBorder(inv, (short) data);
     }
 
     public void setBorder(Inventory inv, short data){
-        ArrayList<Integer> vitres = new ArrayList<>(Arrays.asList(0, 1, 9, 7, 8, 17, 52, 53, 36, 44, 45, 46));
-        for (int vitre : vitres) {
-            inv.setItem(vitre, new ItemBuilder(Material.STAINED_GLASS_PANE, 1, data).setName(" ").build(false));
+        int[] corners = getCorners(inv);
+
+        ItemStack item = new ItemBuilder(Material.STAINED_GLASS_PANE, 1, data).setName(" ").build();
+
+        for (int glass : corners) {
+            inv.setItem(glass, item);
         }
+    }
+
+    private int[] getCorners(Inventory inventory) {
+        int size = inventory.getSize();
+        return IntStream.range(0, size).filter(i -> i < 2 || (i > 6 && i < 10) || i == 17 || i == size - 18 || (i > size - 11 && i < size - 7) || i > size - 3).toArray();
     }
 
     public void updateMenu() {
@@ -86,4 +94,7 @@ public abstract class HeriaMenu implements InventoryHolder {
             return Bukkit.createInventory(this, this.type, this.name);
         }
     }
+
+
+
 }

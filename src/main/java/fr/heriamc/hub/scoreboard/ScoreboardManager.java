@@ -1,7 +1,6 @@
-package fr.silentmc.ffa.modules.scoreboard.manager;
+package fr.heriamc.hub.scoreboard;
 
-import fr.silentmc.ffa.modules.scoreboard.PersonalScoreboard;
-import fr.silentmc.ffa.modules.scoreboard.ScoreboardModule;
+import fr.heriamc.hub.HeriaHub;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -18,26 +17,26 @@ public class ScoreboardManager {
     private int ipCharIndex;
     private int cooldown;
 
-    private final ScoreboardModule scoreboardModule;
+    private final HeriaHub hub;
 
-    public ScoreboardManager(ScoreboardModule scoreboardModule) {
-        this.scoreboardModule = scoreboardModule;
+    public ScoreboardManager(HeriaHub hub) {
+        this.hub = hub;
 
         scoreboards = new HashMap<>();
         ipCharIndex = 0;
         cooldown = 0;
 
-        glowingTask = scoreboardModule.getScheduledExecutorService().scheduleAtFixedRate(() ->
+        glowingTask = hub.getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             String ip = colorIpAt();
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                scoreboardModule.getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
+                hub.getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
         }, 80, 80, TimeUnit.MILLISECONDS);
 
-        reloadingTask = scoreboardModule.getScheduledExecutorService().scheduleAtFixedRate(() ->
+        reloadingTask = hub.getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                scoreboardModule.getExecutorMonoThread().execute(scoreboard::reloadData);
+                hub.getExecutorMonoThread().execute(scoreboard::reloadData);
         }, 1, 1, TimeUnit.SECONDS);
     }
 
@@ -50,7 +49,7 @@ public class ScoreboardManager {
             return;
         }
 
-        scoreboards.put(player.getUniqueId(), new PersonalScoreboard(player, scoreboardModule));
+        scoreboards.put(player.getUniqueId(), new PersonalScoreboard(player, hub));
     }
 
     public void onLogout(Player player) {
@@ -67,7 +66,7 @@ public class ScoreboardManager {
     }
 
     private String colorIpAt() {
-        String ip = "play.hylers.fr";
+        String ip = "play.heria-mc.fr";
 
         if (cooldown > 0) {
             cooldown--;

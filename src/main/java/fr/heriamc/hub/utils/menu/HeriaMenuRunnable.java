@@ -1,16 +1,22 @@
-package fr.heriamc.core.utils.ui;
+package fr.heriamc.hub.utils.menu;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class HeriaMenuRunnable implements Runnable {
 
+    private final HeriaMenuManager menuManager;
+
+    public HeriaMenuRunnable(HeriaMenuManager menuManager) {
+        this.menuManager = menuManager;
+    }
+
     @Override
     public void run() {
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (HeriaMenuManager.getInventory().containsKey(player)) {
-                if (HeriaMenuManager.getInventory().get(player).isUpdate()) {
-                    HeriaMenuManager.getInventory().get(player).updateMenu();
+            if (this.menuManager.getInventory().containsKey(player)) {
+                if (this.menuManager.getInventory().get(player).isUpdate()) {
+                    this.menuManager.getInventory().get(player).updateMenu();
                 }
             }
         }

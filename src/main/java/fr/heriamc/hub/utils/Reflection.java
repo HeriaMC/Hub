@@ -1,4 +1,4 @@
-package fr.silentmc.ffa.modules.scoreboard.utils;
+package fr.heriamc.hub.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

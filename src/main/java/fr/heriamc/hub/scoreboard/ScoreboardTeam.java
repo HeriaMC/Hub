@@ -1,4 +1,4 @@
-package fr.silentmc.ffa.modules.scoreboard.manager;
+package fr.heriamc.hub.scoreboard;
 
 import net.minecraft.server.v1_8_R3.EntityPlayer;
 import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerInfo;

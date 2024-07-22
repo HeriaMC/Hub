@@ -1,4 +1,4 @@
-package fr.silentmc.ffa.modules.scoreboard.utils;
+package fr.heriamc.hub.utils;
 
 import net.minecraft.server.v1_8_R3.IScoreboardCriteria;
 import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardDisplayObjective;

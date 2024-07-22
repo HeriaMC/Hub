@@ -1,6 +1,5 @@
-package fr.silentmc.ffa.modules.scoreboard.utils;
+package fr.heriamc.hub.utils;
 
-import fr.silentmc.ffa.modules.scoreboard.utils.VObjective;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 

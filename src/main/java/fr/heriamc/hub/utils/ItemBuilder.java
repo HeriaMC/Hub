@@ -1,9 +1,4 @@
-package fr.heriamc.api.utils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+package fr.heriamc.hub.utils;
 
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
@@ -13,6 +8,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class ItemBuilder {
     private ItemStack is;
@@ -29,8 +29,8 @@ public class ItemBuilder {
         is = new ItemStack(m, amount);
     }
 
-    public ItemBuilder(Material m, int amount, byte durability){
-        is = new ItemStack(m, amount, durability);
+    public ItemBuilder(Material m, int amount, short data){
+        is = new ItemStack(m, amount, data);
     }
 
     public ItemBuilder clone(){
