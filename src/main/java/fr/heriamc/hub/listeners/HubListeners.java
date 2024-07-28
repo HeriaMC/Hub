@@ -2,7 +2,9 @@ package fr.heriamc.hub.listeners;
 
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.HubItem;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,7 +24,7 @@ import org.bukkit.inventory.PlayerInventory;
 public class HubListeners implements Listener {
 
     private final HeriaHub hub;
-
+    private final Location spawn = new Location(Bukkit.getWorld("world"), -59673.5, 105.5, -30065.5, 0, 0);
     public HubListeners(HeriaHub hub) {
         this.hub = hub;
     }
@@ -38,6 +40,7 @@ public class HubListeners implements Listener {
         player.setLevel(0);
         player.setFoodLevel(20);
         player.getInventory().clear();
+        player.teleport(this.spawn);
 
         for (HubItem item : HubItem.values()) {
             PlayerInventory inventory = player.getInventory();
@@ -74,17 +77,17 @@ public class HubListeners implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event){
-        event.setCancelled(true);
+        event.setCancelled(!event.getWhoClicked().isOp());
     }
 
     @EventHandler
     public void onInventoryDrag(InventoryDragEvent event){
-        event.setCancelled(true);
+        event.setCancelled(!event.getWhoClicked().isOp());
     }
 
     @EventHandler
     public void onDrop(PlayerDropItemEvent event){
-        event.setCancelled(true);
+        event.setCancelled(!event.getPlayer().isOp());
     }
 
     @EventHandler
