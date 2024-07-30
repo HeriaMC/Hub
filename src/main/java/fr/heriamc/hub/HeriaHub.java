@@ -1,8 +1,8 @@
 package fr.heriamc.hub;
 
-import fr.heriamc.bukkit.HeriaBukkit;
 import fr.heriamc.hub.listeners.HubListeners;
 import fr.heriamc.hub.scoreboard.ScoreboardManager;
+import fr.heriamc.hub.utils.menu.HeriaMenuManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.java.annotation.plugin.ApiVersion;
 import org.bukkit.plugin.java.annotation.plugin.Plugin;
@@ -18,8 +18,8 @@ import java.util.concurrent.ScheduledExecutorService;
 public class HeriaHub extends JavaPlugin {
 
     private static HeriaHub instance;
-    private HeriaBukkit bukkitAPI;
 
+    private HeriaMenuManager menuManager;
     private ScoreboardManager scoreboardManager;
 
     private ScheduledExecutorService executorMonoThread;
@@ -36,8 +36,8 @@ public class HeriaHub extends JavaPlugin {
         scheduledExecutorService = Executors.newScheduledThreadPool(16);
         executorMonoThread = Executors.newScheduledThreadPool(1);
 
+        this.menuManager = new HeriaMenuManager(this);
         this.scoreboardManager = new ScoreboardManager(this);
-        this.bukkitAPI = HeriaBukkit.get();
 
         this.getServer().getPluginManager().registerEvents(new HubListeners(this), this);
     }
@@ -47,12 +47,12 @@ public class HeriaHub extends JavaPlugin {
 
     }
 
-    public ScoreboardManager getScoreboardManager() {
-        return scoreboardManager;
+    public HeriaMenuManager getMenuManager() {
+        return menuManager;
     }
 
-    public HeriaBukkit getBukkitAPI() {
-        return bukkitAPI;
+    public ScoreboardManager getScoreboardManager() {
+        return scoreboardManager;
     }
 
     public ScheduledExecutorService getExecutorMonoThread() {
