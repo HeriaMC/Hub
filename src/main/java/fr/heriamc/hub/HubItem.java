@@ -12,7 +12,7 @@ public enum HubItem {
 
     GAMES(0, new ItemBuilder(Material.COMPASS).setName("§6Menu des jeux").build(), (hub, event) -> {
         GamesMenu gamesMenu = new GamesMenu(event.getPlayer());
-        hub.getMenuManager().open(gamesMenu);
+        hub.getBukkitAPI().getMenuManager().open(gamesMenu);
     }),
 
     SHOP(1, new ItemBuilder(Material.GOLD_INGOT).setName("§eBoutique").build(), (hub, event) -> {

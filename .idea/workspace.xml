@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2458a55a-acb3-4b96-b655-234368cbe6c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/utils/NameTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/HeriaHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/HeriaHub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/HubItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/HubItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/HubListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/HubListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/GamesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/GamesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/scoreboard/PersonalScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/scoreboard/PersonalScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/utils/menu/HeriaMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/utils/menu/HeriaMenuManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/utils/menu/HeriaMenuRunnable.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +27,26 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HeriaHub" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -42,7 +73,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Makar/starblade-project/HeriaHub/src/main/java/fr/heriamc/hub/scoreboard&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Makar/starblade-project/HeriaHub/src/main/java/fr/heriamc/hub/scoreboard&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -101,12 +135,20 @@
       <option name="project" value="LOCAL" />
       <updated>1721643069175</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="spawn teleport and op modifications spawn">
+      <created>1722185599731</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722185599731</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="class content" />
     <MESSAGE value="hunger remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="hunger remove" />
+    <MESSAGE value="spawn teleport and op modifications spawn" />
+    <option name="LAST_COMMIT_MESSAGE" value="spawn teleport and op modifications spawn" />
   </component>
 </project>

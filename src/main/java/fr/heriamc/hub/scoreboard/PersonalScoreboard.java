@@ -1,5 +1,6 @@
 package fr.heriamc.hub.scoreboard;
 
+import fr.heriamc.api.user.HeriaPlayer;
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.utils.ObjectiveSign;
 import org.bukkit.Bukkit;
@@ -15,6 +16,11 @@ public class PersonalScoreboard {
 
     private final HeriaHub hub;
 
+    private HeriaPlayer heriaPlayer;
+    private String hubNumber;
+    private int connected;
+
+
     public PersonalScoreboard(Player player, HeriaHub hub) {
         this.player = player;
         this.hub = hub;
@@ -23,10 +29,13 @@ public class PersonalScoreboard {
         objectiveSign = new ObjectiveSign("sidebar", "heriamc");
         reloadData();
         objectiveSign.addReceiver(player);
+
+        this.hubNumber = hub.getBukkitAPI().getInstanceName().split("-")[1];
     }
 
     public void reloadData() {
-
+        this.heriaPlayer = hub.getBukkitAPI().getApi().getPlayerManager().get(player.getUniqueId());
+        this.connected = Bukkit.getOnlinePlayers().size();
     }
 
     /*public String formatCoins(int coins) {
@@ -45,16 +54,17 @@ public class PersonalScoreboard {
         objectiveSign.clearScores();
 
         objectiveSign.setLine(0, "§e ");
-        objectiveSign.setLine(1, "§8■ §7Grade: §7Joueur");
+        objectiveSign.setLine(1, "§8■ §7Grade: " + heriaPlayer.getRank().getPrefix());
         objectiveSign.setLine(2, "§b ");
         objectiveSign.setLine(3, "§6§l» §f§l" + player.getName());
-        objectiveSign.setLine(4, "§8■ §7Points: §60 ⛃");
-        objectiveSign.setLine(5, "§8■ §7Crédit: §d0 EUR");
-        objectiveSign.setLine(6, "§c ");
-        objectiveSign.setLine(7, "§8■ §7Hub: §a#1");
-        objectiveSign.setLine(8, "§8■ §7Connectés: §b4");
-        objectiveSign.setLine(9, "§6 ");
-        objectiveSign.setLine(10, ip);
+        objectiveSign.setLine(4, "§8■ §7Points: §6" + (int) heriaPlayer.getCoins() +" ⛃");
+        objectiveSign.setLine(5, "§8■ §7Crédit: §d" + heriaPlayer.getCredits() + " EUR");
+        objectiveSign.setLine(6, "§8■ §7Hosts: §3" + heriaPlayer.getHosts() +" ☀");
+        objectiveSign.setLine(7, "§c ");
+        objectiveSign.setLine(8, "§8■ §7Hub: §a#" + this.hubNumber);
+        objectiveSign.setLine(9, "§8■ §7Connectés: §b" + this.connected);
+        objectiveSign.setLine(10, "§6 ");
+        objectiveSign.setLine(11, ip);
 
         objectiveSign.updateLines();
     }

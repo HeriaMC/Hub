@@ -1,7 +1,9 @@
 package fr.heriamc.hub.listeners;
 
+import fr.heriamc.api.user.HeriaPlayer;
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.HubItem;
+import fr.heriamc.hub.utils.NameTag;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -25,6 +27,7 @@ public class HubListeners implements Listener {
 
     private final HeriaHub hub;
     private final Location spawn = new Location(Bukkit.getWorld("world"), -59673.5, 105.5, -30065.5, 0, 0);
+
     public HubListeners(HeriaHub hub) {
         this.hub = hub;
     }
@@ -46,6 +49,9 @@ public class HubListeners implements Listener {
             PlayerInventory inventory = player.getInventory();
             inventory.setItem(item.getSlot(), item.getItemStack());
         }
+
+        HeriaPlayer heriaPlayer = hub.getBukkitAPI().getApi().getPlayerManager().get(player.getUniqueId());
+        NameTag.setNameTag(player, heriaPlayer.getRank().getPrefix(), " ", heriaPlayer.getRank().getPower());
 
         this.hub.getScoreboardManager().onLogin(player);
 
