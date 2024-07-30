@@ -2,8 +2,11 @@ package fr.heriamc.hub;
 
 import fr.heriamc.hub.listeners.HubListeners;
 import fr.heriamc.hub.scoreboard.ScoreboardManager;
+import fr.heriamc.hub.tasks.ActionBarTask;
 import fr.heriamc.hub.utils.menu.HeriaMenuManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.java.annotation.dependency.Dependency;
+import org.bukkit.plugin.java.annotation.dependency.DependsOn;
 import org.bukkit.plugin.java.annotation.plugin.ApiVersion;
 import org.bukkit.plugin.java.annotation.plugin.Plugin;
 import org.bukkit.plugin.java.annotation.plugin.author.Author;
@@ -14,6 +17,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 @Plugin(name = "HeriaHub", version = "1.0.0")
 @Authors(@Author("Karaam_"))
+@DependsOn({@Dependency("HeriaAPI")})
 @ApiVersion(ApiVersion.Target.v1_13)
 public class HeriaHub extends JavaPlugin {
 
@@ -40,6 +44,8 @@ public class HeriaHub extends JavaPlugin {
         this.scoreboardManager = new ScoreboardManager(this);
 
         this.getServer().getPluginManager().registerEvents(new HubListeners(this), this);
+
+        new ActionBarTask();
     }
 
     @Override
