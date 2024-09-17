@@ -3,13 +3,16 @@ package fr.heriamc.hub.listeners;
 import fr.heriamc.api.user.HeriaPlayer;
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.HubItem;
+import fr.heriamc.hub.scoreboard.HubScoreboard;
 import fr.heriamc.hub.utils.NameTag;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.*;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
@@ -26,7 +29,7 @@ import org.bukkit.inventory.PlayerInventory;
 public class HubListeners implements Listener {
 
     private final HeriaHub hub;
-    private final Location spawn = new Location(Bukkit.getWorld("world"), -59673.5, 105.5, -30065.5, 0, 0);
+    private final Location spawn = new Location(Bukkit.getWorld("world"), -5.5, 110.5, 2.5, -90, 0);
 
     public HubListeners(HeriaHub hub) {
         this.hub = hub;
@@ -51,10 +54,11 @@ public class HubListeners implements Listener {
         }
 
         HeriaPlayer heriaPlayer = hub.getBukkitAPI().getApi().getPlayerManager().get(player.getUniqueId());
-        NameTag.setNameTag(player, heriaPlayer.getRank().getPrefix(), " ", heriaPlayer.getRank().getPower());
+        NameTag.setNameTag(player, heriaPlayer.getRank().getPrefix(), " ", heriaPlayer.getRank().getTabPriority());
 
-        this.hub.getScoreboardManager().onLogin(player);
+        this.hub.getNpcManager().displayNpc(player);
 
+        this.hub.getScoreboardManager().onLogin(player, new HubScoreboard(player, hub));
     }
 
     @EventHandler
@@ -83,17 +87,29 @@ public class HubListeners implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event){
-        event.setCancelled(!event.getWhoClicked().isOp());
+        if(event.getWhoClicked().isOp()){
+            return;
+        }
+
+        event.setCancelled(true);
     }
 
     @EventHandler
     public void onInventoryDrag(InventoryDragEvent event){
-        event.setCancelled(!event.getWhoClicked().isOp());
+        if(event.getWhoClicked().isOp()){
+            return;
+        }
+
+        event.setCancelled(true);
     }
 
     @EventHandler
     public void onDrop(PlayerDropItemEvent event){
-        event.setCancelled(!event.getPlayer().isOp());
+        if(event.getPlayer().isOp()){
+            return;
+        }
+
+        event.setCancelled(true);
     }
 
     @EventHandler
@@ -113,6 +129,31 @@ public class HubListeners implements Listener {
 
     @EventHandler
     public void unHunger(FoodLevelChangeEvent event){
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onPhysics(BlockPhysicsEvent event){
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onBlockForm(BlockFromToEvent event){
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onBlockForm(BlockFormEvent event){
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onBlockForm(BlockGrowEvent event){
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onBlockFade(BlockFadeEvent event){
         event.setCancelled(true);
     }
 }

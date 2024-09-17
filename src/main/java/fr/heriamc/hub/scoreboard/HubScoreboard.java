@@ -1,6 +1,7 @@
 package fr.heriamc.hub.scoreboard;
 
 import fr.heriamc.api.user.HeriaPlayer;
+import fr.heriamc.bukkit.scoreboard.PersonalScoreboard;
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.utils.ObjectiveSign;
 import org.bukkit.Bukkit;
@@ -9,28 +10,20 @@ import org.bukkit.entity.Player;
 import java.util.UUID;
 
 
-public class PersonalScoreboard {
-    private final Player player;
-    private final UUID uuid;
-    private final ObjectiveSign objectiveSign;
+public class HubScoreboard extends PersonalScoreboard {
 
     private final HeriaHub hub;
 
     private HeriaPlayer heriaPlayer;
-    private String hubNumber;
+    private final String hubNumber;
     private int connected;
 
-
-    public PersonalScoreboard(Player player, HeriaHub hub) {
-        this.player = player;
+    public HubScoreboard(Player player, HeriaHub hub) {
+        super(player);
         this.hub = hub;
 
-        uuid = player.getUniqueId();
-        objectiveSign = new ObjectiveSign("sidebar", "heriamc");
-        reloadData();
-        objectiveSign.addReceiver(player);
-
         this.hubNumber = hub.getBukkitAPI().getInstanceName().split("-")[1];
+        reloadData();
     }
 
     public void reloadData() {

@@ -10,37 +10,33 @@ import java.util.List;
 
 public class ActionBarTask extends BukkitRunnable {
 
-    private final List<String> messages;
-    private String actualMessage;
-    private int seconds, secondsToChange, ticks;
+    private final List<String> actionbars;
 
-    public ActionBarTask() {
-        this.seconds = 0;
-        this.secondsToChange = 5;
-        this.ticks = 0;
-        this.messages = List.of(
+    private int timer = 0;
+    private int actual = 0;
+
+    public ActionBarTask(HeriaHub hub) {
+        this.actionbars = List.of(
+                "§e§l» §eBienvenue sur §6§lHeriaMC §e! §e§l«",
                 "§f➔ §cNous recrutons des modérateurs ! Rejoignez-nous sur Discord pour postuler.",
-                "§f➔ §eDécouvrez notre boutique en ligne à l'adresse store.heriaserv.net !",
-                "§f➔ §7Si vous rencontrez un bug, tapez §b§n/bug §fpour le signaler.");
-        this.runTaskTimerAsynchronously(HeriaHub.get(), 0, 1);
+                "§f➔ §eGrades§f,§cBadges,§dCrédits§f... §8→ §bshop.heriamc.fr ",
+                "§f➔ §fSi vous rencontrez un bug, tapez §b§n/bug §fpour le signaler.");
+
+        this.runTaskTimerAsynchronously(hub, 0, 20);
     }
 
     @Override
     public void run() {
-        if (this.ticks % 20 == 0) {
-            if (this.seconds == this.secondsToChange) {
-                this.seconds = 0;
-                this.secondsToChange = 5;
-                this.actualMessage = getRandomMessage();
-            }
-            HeriaHub.get().getServer().getOnlinePlayers().forEach(player -> Title.sendActionBar(player, this.actualMessage));
-            seconds++;
+        if(timer >= 5){
+            actual++;
+            timer = 0;
         }
-        ticks++;
-    }
 
-    public String getRandomMessage() {
-        return messages.get((int) (Math.random() * messages.size()));
+        for (Player player : Bukkit.getOnlinePlayers()){
+            Title.sendActionBar(player, actionbars.get(actual % actionbars.size()));
+        }
+
+        timer++;
     }
 
 }
