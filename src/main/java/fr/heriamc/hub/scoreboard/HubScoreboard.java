@@ -31,7 +31,7 @@ public class HubScoreboard extends PersonalScoreboard {
         this.connected = Bukkit.getOnlinePlayers().size();
     }
 
-    /*public String formatCoins(int coins) {
+    public String formatCoins(int coins) {
         if (coins >= 1_000_000) {
             return String.format("%.1fM", coins / 1_000_000.0);
         } else if (coins >= 1_000) {
@@ -39,7 +39,7 @@ public class HubScoreboard extends PersonalScoreboard {
         } else {
             return String.valueOf(coins);
         }
-    }*/
+    }
 
     public void setLines(String ip) {
         objectiveSign.setDisplayName("§e§l» §6§lHERIAMC §e§l«");
@@ -50,7 +50,7 @@ public class HubScoreboard extends PersonalScoreboard {
         objectiveSign.setLine(1, "§8■ §7Grade: " + heriaPlayer.getRank().getPrefix());
         objectiveSign.setLine(2, "§b ");
         objectiveSign.setLine(3, "§6§l» §f§l" + player.getName());
-        objectiveSign.setLine(4, "§8■ §7Points: §6" + (int) heriaPlayer.getCoins() +" ⛃");
+        objectiveSign.setLine(4, "§8■ §7Points: §6" + formatCoins((int) heriaPlayer.getCoins()) +" ⛃");
         objectiveSign.setLine(5, "§8■ §7Crédit: §d" + heriaPlayer.getCredits() + " EUR");
         objectiveSign.setLine(6, "§8■ §7Hosts: §3" + heriaPlayer.getHosts() +" ☀");
         objectiveSign.setLine(7, "§c ");

@@ -3,6 +3,7 @@ package fr.heriamc.hub;
 import fr.heriamc.bukkit.HeriaBukkit;
 import fr.heriamc.bukkit.scoreboard.ScoreboardManager;
 import fr.heriamc.hub.cosmetics.CosmeticManager;
+import fr.heriamc.hub.listeners.DoubleJumpListener;
 import fr.heriamc.hub.listeners.HubListeners;
 import fr.heriamc.hub.npc.NPCInteractListener;
 import fr.heriamc.hub.npc.NPCManager;
@@ -51,6 +52,7 @@ public class HeriaHub extends JavaPlugin {
         this.cosmeticManager = new CosmeticManager(this);
 
         this.getServer().getPluginManager().registerEvents(new HubListeners(this), this);
+        this.getServer().getPluginManager().registerEvents(new DoubleJumpListener(this), this);
         this.getServer().getPluginManager().registerEvents(new NPCInteractListener(this), this);
 
 

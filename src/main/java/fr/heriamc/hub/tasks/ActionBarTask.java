@@ -22,7 +22,7 @@ public class ActionBarTask extends BukkitRunnable {
                 "§f➔ §eGrades§f,§cBadges,§dCrédits§f... §8→ §bshop.heriamc.fr ",
                 "§f➔ §fSi vous rencontrez un bug, tapez §b§n/bug §fpour le signaler.");
 
-        this.runTaskTimerAsynchronously(hub, 0, 20);
+        this.runTaskTimer(hub, 0, 20);
     }
 
     @Override

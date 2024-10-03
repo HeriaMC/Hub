@@ -1,6 +1,7 @@
 package fr.heriamc.hub.listeners;
 
 import fr.heriamc.api.user.HeriaPlayer;
+import fr.heriamc.api.user.rank.HeriaRank;
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.HubItem;
 import fr.heriamc.hub.scoreboard.HubScoreboard;
@@ -17,6 +18,7 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -46,6 +48,7 @@ public class HubListeners implements Listener {
         player.setLevel(0);
         player.setFoodLevel(20);
         player.getInventory().clear();
+        player.setAllowFlight(false);
         player.teleport(this.spawn);
 
         for (HubItem item : HubItem.values()) {
@@ -55,6 +58,10 @@ public class HubListeners implements Listener {
 
         HeriaPlayer heriaPlayer = hub.getBukkitAPI().getApi().getPlayerManager().get(player.getUniqueId());
         NameTag.setNameTag(player, heriaPlayer.getRank().getPrefix(), " ", heriaPlayer.getRank().getTabPriority());
+
+        if(heriaPlayer.getRank().getPower() >= HeriaRank.VIP.getPower()){
+            player.setAllowFlight(true);
+        }
 
         this.hub.getNpcManager().displayNpc(player);
 
@@ -156,4 +163,5 @@ public class HubListeners implements Listener {
     public void onBlockFade(BlockFadeEvent event){
         event.setCancelled(true);
     }
+
 }

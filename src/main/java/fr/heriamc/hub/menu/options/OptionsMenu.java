@@ -19,7 +19,6 @@ public class OptionsMenu extends HeriaMenu {
     @Override
     public void contents(Inventory inventory) {
         setBorder(inventory, DyeColor.RED.getWoolData());
-
-        inventory.setItem(0, new ItemBuilder(Material.STONE).setName("Soon...").build());
+        
     }
 }

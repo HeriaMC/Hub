@@ -21,7 +21,7 @@ public class ShopRankConfirmMenu extends ConfirmMenu {
             heriaAction.removeCredits(shopRank.getPrice());
             hub.getBukkitAPI().getApi().getPlayerManager().save(heriaAction);
             hub.getBukkitAPI().getApi().getPlayerManager().saveInPersistant(heriaAction);
-            player.sendMessage("§a» Vous avez acheté le grade " + shopRank.getConverter().getPrefix() + " ! Il est possible que certaines fonctionnalités demandent une reconnection au serveur.");
+            player.sendMessage("§a» Vous avez acheté le grade " + shopRank.getConverter().getName() + " ! Il est possible que certaines fonctionnalités demandent une reconnection au serveur.");
         });
         this.shopRank = shopRank;
     }

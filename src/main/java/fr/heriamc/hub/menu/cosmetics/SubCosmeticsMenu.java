@@ -44,12 +44,11 @@ public class SubCosmeticsMenu extends HeriaPaginationMenu<CosmeticSubType> {
                 .setName(rarity.getColor() + cosmeticSubType.getRepresentation().getName())
                 .addLore(" ")
                 .addLore("§8» §7Rareté: " + rarity.getColoredName())
-                .addLore("§8» §7Prix: §6" + rarity.getCoinsPrice() + " ⛃§8/§d" + rarity.getCreditsPrice() + " EUR")
+                .addLore("§8» §7Prix: §6" + rarity.getCoinsPrice() + " ⛃ §7/ §d" + rarity.getCreditsPrice() + " EUR")
                 .addLore(" ")
-                .addLore("§6§l❱ §eClic gauche pour équiper")
-                .addLore("§6§l❱ §eClic droit pour prévisualiser")
+                .addLore("§6§l❱ §eClique pour acheter")
                 .onClick(event -> {
-            type.equip(hub, getPlayer(), cosmeticSubType.getId());
-        });
+                    type.equip(hub, getPlayer(), cosmeticSubType.getId());
+                });
     }
 }
