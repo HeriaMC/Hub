@@ -1,6 +1,5 @@
 package fr.heriamc.hub.cosmetics;
 
-import fr.heriamc.api.user.HeriaPlayer;
 import fr.heriamc.bukkit.utils.ItemBuilder;
 import fr.heriamc.hub.HeriaHub;
 import fr.heriamc.hub.cosmetics.types.ArmorCosmetic;
@@ -17,33 +16,56 @@ public enum CosmeticType {
         @Override
         public void equip(HeriaHub hub, Player player, String id) {
             Server server = hub.getServer();
+
             server.dispatchCommand(server.getConsoleSender(), "pc give cosmetic " + player.getName() + " particle-effects " + id);
             server.dispatchCommand(server.getConsoleSender(), "pc equip " + player.getName() + " particle-effects " + id);
         }
+
+        @Override
+        public void unEquip(HeriaHub hub, Player player, String id) {
+            Server server = hub.getServer();
+
+            server.dispatchCommand(server.getConsoleSender(), "pc unequip " + player.getName() + " particle-effects");
+        }
     },
 
-    MINIATURES("Pets", 22, new ItemBuilder(Material.STONE).setName("§6Pets")){
+    MINIATURES("Pets", 22, new ItemBuilder(Material.SADDLE).setName("§6Pets")){
         @Override
         public void equip(HeriaHub hub, Player player, String id) {
             Server server = hub.getServer();
             server.dispatchCommand(server.getConsoleSender(), "pc equip " + player.getName() + " miniatures " + id);
         }
+
+        @Override
+        public void unEquip(HeriaHub hub, Player player, String id) {
+            Server server = hub.getServer();
+
+            server.dispatchCommand(server.getConsoleSender(), "pc unequip " + player.getName() + " miniatures");
+        }
     },
 
-    ARMOR("Armures", 23, new ItemBuilder(Material.STONE).setName("§dArmures")){
+    ARMOR("Armures", 23, new ItemBuilder(Material.LEATHER_CHESTPLATE).setName("§dArmures")){
         @Override
         public void equip(HeriaHub hub, Player player, String id) {
-            String armorID = id.split("\\.")[0];
             String armorPart = id.split("\\.")[1];
 
-            ArmorCosmetic cosmetic = ArmorCosmetic.getFromId(armorID);
-            EquipmentSlot equipmentSlot = EquipmentSlot.valueOf(armorPart);
+            ArmorCosmetic cosmetic = ArmorCosmetic.getFromId(id);
+            EquipmentSlot equipmentSlot = EquipmentSlot.valueOf(armorPart.toUpperCase());
 
             if(cosmetic == null){
                 return;
             }
 
             this.equipArmor(player.getInventory(), equipmentSlot, cosmetic.getArmor());
+        }
+
+        @Override
+        public void unEquip(HeriaHub hub, Player player, String id) {
+            String armorPart = id.split("\\.")[1];
+            EquipmentSlot equipmentSlot = EquipmentSlot.valueOf(armorPart.toUpperCase());
+
+            this.equipArmor(player.getInventory(), equipmentSlot, null);
+
         }
 
         public void equipArmor(PlayerInventory inventory, EquipmentSlot equipmentSlot, ItemStack item){
@@ -56,7 +78,7 @@ public enum CosmeticType {
         }
     },
 
-    JOIN_MESSAGES("Messsages de connection", 31, new ItemBuilder(Material.STONE).setName("§3Messages de connection")){
+    JOIN_MESSAGES("Messsages de connection", 31, new ItemBuilder(Material.PAPER).setName("§3Messages de connection")){
         @Override
         public void equip(HeriaHub hub, Player player, String id) {
             //TODO ?
@@ -88,6 +110,10 @@ public enum CosmeticType {
     }
 
     public void equip(HeriaHub hub, Player player, String id) {
+
+    }
+
+    public void unEquip(HeriaHub hub, Player player, String id){
 
     }
 

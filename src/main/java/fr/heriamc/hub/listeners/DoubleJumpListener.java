@@ -5,6 +5,7 @@ import fr.heriamc.api.data.LocalDataManager;
 import fr.heriamc.api.user.HeriaPlayer;
 import fr.heriamc.api.user.rank.HeriaRank;
 import fr.heriamc.hub.HeriaHub;
+import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -42,11 +43,14 @@ public class DoubleJumpListener extends LocalDataManager<Player, Boolean> implem
         Vector multiply = player.getLocation().getDirection().setY(2.0D);
         player.setVelocity(multiply);
 
-        player.playSound(player.getLocation(), Sound.BAT_TAKEOFF, 1, 1);
+        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            onlinePlayer.playSound(player.getLocation(), Sound.BAT_TAKEOFF, 1, 1);
 
-        for (int i = 0; i < 10; i++) {
-            player.getWorld().playEffect(player.getLocation(), Effect.CLOUD, 1, 1);
+            for (int i = 0; i < 10; i++) {
+                onlinePlayer.getWorld().playEffect(player.getLocation(), Effect.CLOUD, 1, 1);
+            }
         }
+
 
         if(heriaPlayer.getRank().getPower() >= HeriaRank.VIP_PLUS.getPower()){
             return;

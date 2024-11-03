@@ -1,8 +1,12 @@
 package fr.heriamc.hub.menu.games;
 
+import fr.heriamc.api.server.HeriaServerType;
 import fr.heriamc.bukkit.menu.HeriaMenu;
 import fr.heriamc.bukkit.utils.ItemBuilder;
 import fr.heriamc.hub.HeriaHub;
+import fr.heriamc.hub.game.HubGame;
+import fr.heriamc.hub.menu.games.sub.SubGameListMenu;
+import fr.heriamc.hub.menu.games.sub.SubGameMainMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -20,8 +24,8 @@ public class MiniGamesMenu extends GamesMenu {
         inv.setItem(30, new ItemBuilder(Material.BARRIER).setName("§c» Prochainement...").build());
         inv.setItem(32, new ItemBuilder(Material.BARRIER).setName("§c» Prochainement...").build());
 
-        this.insertInteractItem(inv, 22, new ItemBuilder(Material.GRASS)
-                .setName("§e» §6Freecube")
+        this.insertInteractItem(inv, 22, new ItemBuilder(Material.STICK)
+                .setName("§e» §6Shootcraft")
                 .setLoreWithList(
                         "",
                         "§7Le FreeCube vous permet de créer",
@@ -30,12 +34,13 @@ public class MiniGamesMenu extends GamesMenu {
                         " ",
                         "§8» §7Version : §e1.8+",
                         "§8» §7Connectés : §60",
+                        "§8» §7Développeur : §64kara",
                         " ",
-                        "§6&l❱ §eClique pour rejoindre")
+                        "§6&l❱ §eClique: §fJouer")
                 .onClick(event -> {
-
+                    hub.getBukkitAPI().getMenuManager().open(new SubGameMainMenu(getPlayer(), hub, HubGame.SHOOTCRAFT, this));
+                    return;
                 }));
-
 
         this.insertInteractItem(inv, 31, new ItemBuilder(Material.SANDSTONE)
                 .setName("§e» §6HikaBrain")
@@ -47,10 +52,12 @@ public class MiniGamesMenu extends GamesMenu {
                         " ",
                         "§8» §7Version : §e1.8+",
                         "§8» §7Connectés : §60",
+                        "§8» §7Développeur : §64kara",
                         " ",
-                        "§6&l❱ §eClique pour rejoindre")
+                        "§6&l❱ §eClique: §fJouer")
                 .onClick(event -> {
-
+                    hub.getBukkitAPI().getMenuManager().open(new SubGameMainMenu(getPlayer(), hub, HubGame.HIKABRAIN, this));
+                    return;
                 }));
     }
 }

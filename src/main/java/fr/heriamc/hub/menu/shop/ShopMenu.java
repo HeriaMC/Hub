@@ -27,22 +27,22 @@ public class ShopMenu extends HeriaMenu {
 
         inventory.setItem(4, new ItemBuilder(Material.GOLD_INGOT).setName("§f» §eBoutique").build());
 
-        this.insertInteractItem(inventory, 22, new ItemBuilder(Material.ENCHANTMENT_TABLE).setName("§e» §6Grades")
+        this.insertInteractItem(inventory, 22, new ItemBuilder(Material.ENCHANTMENT_TABLE).setName("§f» §6Grades")
                 .onClick(event -> {
                     hub.getBukkitAPI().getMenuManager().open(new ShopRanksMenu(getPlayer(), hub, before));
                 }));
 
-        this.insertInteractItem(inventory, 31, new ItemBuilder(Material.NETHER_STAR).setName("§e» §dHost")
+        this.insertInteractItem(inventory, 31, new ItemBuilder(Material.NETHER_STAR).setName("§f» §dHost")
                 .onClick(event -> {
                     hub.getBukkitAPI().getMenuManager().open(new ShopHostMenu(getPlayer(), hub));
                 }));
 
-        this.insertInteractItem(inventory, 30, new ItemBuilder(Material.CHEST).setName("§e» §eLootboxes")
+        this.insertInteractItem(inventory, 30, new ItemBuilder(Material.CHEST).setName("§f» §eLootboxes")
                 .onClick(event -> {
 
                 }));
 
-        this.insertInteractItem(inventory, 32, new ItemBuilder(Material.HOPPER).setName("§e» §9Pack de cosmétiques")
+        this.insertInteractItem(inventory, 32, new ItemBuilder(Material.HOPPER).setName("§f» §9Pack de cosmétiques")
                 .onClick(event -> {
 
                 }));

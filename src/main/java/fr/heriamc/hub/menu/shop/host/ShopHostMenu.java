@@ -31,7 +31,7 @@ public class ShopHostMenu extends HeriaMenu {
         float price = (float) count / 2;
 
         if(count >= 10){
-            price -= (count / 10);
+            price -= ((float) count / 10);
         }
 
         float finalPrice = price;
@@ -52,7 +52,7 @@ public class ShopHostMenu extends HeriaMenu {
                         return;
                     }
 
-                    hub.getBukkitAPI().getMenuManager().open(new ShopHostConfirmMenu(getPlayer(), hub, this, count));
+                    hub.getBukkitAPI().getMenuManager().open(new ShopHostConfirmMenu(getPlayer(), hub, this, count, finalPrice));
                 }));
 
         this.insertInteractItem(inventory, 29, new ItemBuilder(Material.SKULL_ITEM, 1, (short) 3)

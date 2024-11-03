@@ -29,7 +29,7 @@ public class BasicGamesMenu extends GamesMenu{
                         "§8» §7Version: §e1.8+",
                         "§8» §7Connectés: §60",
                         "",
-                        "§6&l❱ §eClique pour rejoindre")
+                        "§6&l❱ §eClique: §fParcourir")
                 .flag(ItemFlag.HIDE_ATTRIBUTES)
                 .onClick(event -> {
                     hub.getBukkitAPI().getMenuManager().open(new MiniGamesMenu(getPlayer(), hub, this));
@@ -46,7 +46,7 @@ public class BasicGamesMenu extends GamesMenu{
                         "§8» §7Version : §e1.8+",
                         "§8» §7Connectés : §60",
                         "",
-                        "§6&l❱ §eClique pour rejoindre")
+                        "§6&l❱ §eClique: §fParcourir")
                 .onClick(event -> {
                     hub.getBukkitAPI().getMenuManager().open(new FFAGamesMenu(getPlayer(), hub, this));
                 }));

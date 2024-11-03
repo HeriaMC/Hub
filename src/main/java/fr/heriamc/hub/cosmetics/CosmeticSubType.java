@@ -1,12 +1,15 @@
 package fr.heriamc.hub.cosmetics;
 
 import fr.heriamc.bukkit.utils.ItemBuilder;
+import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 
 public enum CosmeticSubType {
 
     //paticules
+
+    DISABLE(null, null, null, new ItemBuilder(Material.BARRIER).setName("§cDéséquiper les cosmétiques")),
 
     EMERALD_TWIRL(CosmeticType.PARTICLE, CosmeticRarity.RARE, "emerald-twirl", new ItemBuilder(Material.EMERALD).setName("Tourbillon émeraude")),
     ENCHANTED(CosmeticType.PARTICLE, CosmeticRarity.RARE, "enchanted", new ItemBuilder(Material.BOOK).setName("Enchanté")),
@@ -37,6 +40,44 @@ public enum CosmeticSubType {
 
     //miniautres
 
+    COW(CosmeticType.MINIATURES, CosmeticRarity.RARE, "cow", new ItemBuilder(Material.LEATHER).setName("Vache")),
+    SKELETON(CosmeticType.MINIATURES, CosmeticRarity.RARE, "skeleton", new ItemBuilder(Material.ARROW).setName("Squelette")),
+    SHEEP(CosmeticType.MINIATURES, CosmeticRarity.RARE, "sheep", new ItemBuilder(Material.WOOL).setName("Mouton")),
+    CHICKEN(CosmeticType.MINIATURES, CosmeticRarity.RARE, "chicken", new ItemBuilder(Material.FEATHER).setName("Poulet")),
+    ZOMBIE(CosmeticType.MINIATURES, CosmeticRarity.RARE, "zombie", new ItemBuilder(Material.ROTTEN_FLESH).setName("Zombie")),
+    IRON_GOLEM(CosmeticType.MINIATURES, CosmeticRarity.RARE, "iron-golem", new ItemBuilder(Material.IRON_INGOT).setName("Golem de fer")),
+    SPIDER(CosmeticType.MINIATURES, CosmeticRarity.RARE, "spider", new ItemBuilder(Material.WEB).setName("Araignée")),
+
+    WITCH(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "witch", new ItemBuilder(Material.POTION).setName("Sorcière")),
+    BUNNY(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "bunny", new ItemBuilder(Material.RABBIT_HIDE).setName("Lapin")),
+    ELEPHANT(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "elephant", new ItemBuilder(Material.COAL).setName("Elephant")),
+    PANDA(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "panda", new ItemBuilder(Material.SUGAR_CANE).setName("Panda")),
+    DOLPHIN(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "dolphin", new ItemBuilder(Material.PRISMARINE_CRYSTALS).setName("Dauphin")),
+    DOGE(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "doge", new ItemBuilder(Material.BONE).setName("Chien")),
+    GHOST(CosmeticType.MINIATURES, CosmeticRarity.EPIC, "ghost", new ItemBuilder(Material.GHAST_TEAR).setName("Fantome")),
+
+    TURTLE(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "turtle", new ItemBuilder(Material.INK_SACK, 1, DyeColor.LIME.getDyeData()).setName("Tortue")),
+    SNAIL(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "snail", new ItemBuilder(Material.INK_SACK, 1, DyeColor.BROWN.getDyeData()).setName("Serpent")),
+    FOX(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "fox", new ItemBuilder(Material.WOOL, 1, DyeColor.ORANGE.getWoolData()).setName("Renard")),
+    TIGER(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "tiger", new ItemBuilder(Material.INK_SACK, 1, DyeColor.ORANGE.getDyeData()).setName("Tigre")),
+    VAMPIRE(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "vampire", new ItemBuilder(Material.REDSTONE).setName("Vampire")),
+    TIKI(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "tiki", new ItemBuilder(Material.WOOD, 1, 1).setName("Tiki")),
+    SNOWMAN(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "snowman", new ItemBuilder(Material.SNOW_BLOCK).setName("Bonhomme de neige")),
+    DWARF(CosmeticType.MINIATURES, CosmeticRarity.MYTHIC, "dwarf", new ItemBuilder(Material.EMERALD).setName("Nain")),
+
+    RONALD(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "ronald", new ItemBuilder(Material.GOLD_INGOT).setName("Ronald")),
+    DONALD_DUCK(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "donald-duck", new ItemBuilder(Material.GOLD_BLOCK).setName("Donald")),
+    MARIO(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "mario", new ItemBuilder(Material.WOOL, 1, DyeColor.RED.getWoolData()).setName("Mario")),
+    YOSHI(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "yoshi", new ItemBuilder(Material.WOOL, 1, DyeColor.LIME.getWoolData()).setName("Yoshi")),
+    TOAD(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "toad", new ItemBuilder(Material.WOOL, 1, DyeColor.WHITE.getWoolData()).setName("Toad")),
+    STITCH(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "stitch", new ItemBuilder(Material.WOOL, 1, DyeColor.BLUE.getWoolData()).setName("Stich")),
+    SHARK(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "shark", new ItemBuilder(Material.WATER_BUCKET).setName("Requin")),
+    SANTA_CLAUS(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "santa-claus", new ItemBuilder(Material.CHEST).setName("Père noël")),
+
+    BLUE_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.head", new ItemBuilder(Material.LEATHER_HELMET).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.chest", new ItemBuilder(Material.LEATHER_CHESTPLATE).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.legs", new ItemBuilder(Material.LEATHER_LEGGINGS).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.feet", new ItemBuilder(Material.LEATHER_BOOTS).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
 
     ;
 

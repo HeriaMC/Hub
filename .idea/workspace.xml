@@ -5,16 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2458a55a-acb3-4b96-b655-234368cbe6c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/types/ArmorCosmetic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/DoubleJumpListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/data/HubPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/data/HubPlayerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/game/HubGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/hologram/LobbyHologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/lootbox/LootboxListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/lootbox/LootboxMainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/lootbox/LootboxOpenRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/lootbox/LootboxPrize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/lootbox/LootboxPrizesMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/sub/SubGameListMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/sub/SubGameMainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/utils/hologram/Hologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/utils/hologram/ListUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/HeriaHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/HeriaHub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/CosmeticManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/CosmeticManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/CosmeticSubType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/CosmeticSubType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/CosmeticType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/cosmetics/CosmeticType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/DoubleJumpListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/DoubleJumpListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/HubListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/listeners/HubListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/ConfirmMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/cosmetics/SubCosmeticsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/cosmetics/SubCosmeticsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/BasicGamesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/BasicGamesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/FFAGamesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/FFAGamesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/MiniGamesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/games/MiniGamesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/lobby/LobbyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/lobby/LobbyMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/options/OptionsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/options/OptionsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/ShopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/host/ShopHostConfirmMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/host/ShopHostConfirmMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/host/ShopHostMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/host/ShopHostMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/rank/ShopRankConfirmMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/rank/ShopRankConfirmMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/scoreboard/HubScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/scoreboard/HubScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/rank/ShopRanksMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/menu/shop/rank/ShopRanksMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/npc/NPCManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/npc/NPCManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/tasks/ActionBarTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/heriamc/hub/tasks/ActionBarTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +75,9 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
-        <option value="Class" />
+        <option value="Record" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,12 +97,14 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Makar/starblade-project/HeriaHub/src/main/java/fr/heriamc/hub/scoreboard&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -160,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726600177058</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="patch notthanks hub">
+      <created>1727972806710</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727972806710</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,6 +203,7 @@
     <MESSAGE value="spawn teleport and op modifications spawn" />
     <MESSAGE value="scoreboard modifications + menu api remove" />
     <MESSAGE value="commits mashaAllah" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits mashaAllah" />
+    <MESSAGE value="patch notthanks hub" />
+    <option name="LAST_COMMIT_MESSAGE" value="patch notthanks hub" />
   </component>
 </project>

@@ -56,7 +56,7 @@ public class ShopRanksMenu extends HeriaMenu {
                     return;
                 }
 
-                hub.getBukkitAPI().getMenuManager().open(new ShopRankConfirmMenu(getPlayer(), hub, this, value));
+                hub.getBukkitAPI().getMenuManager().open(new ShopRankConfirmMenu(getPlayer(), hub, before, value));
             }));
         }
 

@@ -1,8 +1,12 @@
 package fr.heriamc.hub.menu.games;
 
+import fr.heriamc.api.server.HeriaServerType;
 import fr.heriamc.bukkit.menu.HeriaMenu;
 import fr.heriamc.bukkit.utils.ItemBuilder;
 import fr.heriamc.hub.HeriaHub;
+import fr.heriamc.hub.game.HubGame;
+import fr.heriamc.hub.menu.games.sub.SubGameListMenu;
+import fr.heriamc.hub.menu.games.sub.SubGameMainMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -31,10 +35,12 @@ public class FFAGamesMenu extends GamesMenu{
                         " ",
                         "§8» §7Version : §e1.8+",
                         "§8» §7Connectés : §60",
+                        "§8» §7Développeur : §6JoupiterHD",
                         " ",
-                        "§6&l❱ §eClique pour rejoindre")
+                        "§6&l❱ §eClique: §fJouer")
                 .onClick(event -> {
-
+                    hub.getBukkitAPI().getMenuManager().open(new SubGameMainMenu(getPlayer(), hub, HubGame.ONESHOT, this));
+                    return;
                 }));
 
         this.insertInteractItem(inv, 31, new ItemBuilder(Material.TNT)
@@ -48,10 +54,12 @@ public class FFAGamesMenu extends GamesMenu{
                         " ",
                         "§8» §7Version : §e1.8+",
                         "§8» §7Connectés : §60",
+                        "§8» §7Développeur : §64kara",
                         " ",
-                        "§6&l❱ §eClique pour rejoindre")
+                        "§6&l❱ §eClique: §fJouer")
                 .onClick(event -> {
-
+                    hub.getBukkitAPI().getMenuManager().open(new SubGameMainMenu(getPlayer(), hub, HubGame.RUSHFFA, this));
+                    return;
                 }));
     }
 }
