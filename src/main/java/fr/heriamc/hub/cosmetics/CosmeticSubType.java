@@ -74,10 +74,94 @@ public enum CosmeticSubType {
     SHARK(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "shark", new ItemBuilder(Material.WATER_BUCKET).setName("Requin")),
     SANTA_CLAUS(CosmeticType.MINIATURES, CosmeticRarity.LEGENDARY, "santa-claus", new ItemBuilder(Material.CHEST).setName("Père noël")),
 
-    BLUE_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.head", new ItemBuilder(Material.LEATHER_HELMET).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
-    BLUE_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.chest", new ItemBuilder(Material.LEATHER_CHESTPLATE).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
-    BLUE_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.legs", new ItemBuilder(Material.LEATHER_LEGGINGS).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
-    BLUE_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.feet", new ItemBuilder(Material.LEATHER_BOOTS).setName("aa").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.head", new ItemBuilder(Material.LEATHER_HELMET).setName("Casque bleu").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.chest", new ItemBuilder(Material.LEATHER_CHESTPLATE).setName("Plastron bleu").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.legs", new ItemBuilder(Material.LEATHER_LEGGINGS).setName("Jambières bleues").allFlags().setLeatherArmorColor(Color.BLUE)),
+    BLUE_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "blue-armor.feet", new ItemBuilder(Material.LEATHER_BOOTS).setName("Bottes bleues").allFlags().setLeatherArmorColor(Color.BLUE)),
+
+    GREEN_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "green-armor.head",
+            new ItemBuilder(Material.LEATHER_HELMET)
+                    .setName("Casque vert")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.GREEN)),
+    GREEN_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "green-armor.chest",
+            new ItemBuilder(Material.LEATHER_CHESTPLATE)
+                    .setName("Plastron vert")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.GREEN)),
+    GREEN_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "green-armor.legs",
+            new ItemBuilder(Material.LEATHER_LEGGINGS)
+                    .setName("Jambières vertes")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.GREEN)),
+    GREEN_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "green-armor.feet",
+            new ItemBuilder(Material.LEATHER_BOOTS)
+                    .setName("Bottes vertes")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.GREEN)),
+
+    RED_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "red-armor.head",
+            new ItemBuilder(Material.LEATHER_HELMET)
+                    .setName("Casque rouge")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.RED)),
+    RED_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "red-armor.chest",
+            new ItemBuilder(Material.LEATHER_CHESTPLATE)
+                    .setName("Plastron rouge")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.RED)),
+    RED_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "red-armor.legs",
+            new ItemBuilder(Material.LEATHER_LEGGINGS)
+                    .setName("Jambières rouges")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.RED)),
+    RED_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "red-armor.feet",
+            new ItemBuilder(Material.LEATHER_BOOTS)
+                    .setName("Bottes rouges")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.RED)),
+
+    YELLOW_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "yellow-armor.head",
+            new ItemBuilder(Material.LEATHER_HELMET)
+                    .setName("Casque jaune")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.YELLOW)),
+    YELLOW_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "yellow-armor.chest",
+            new ItemBuilder(Material.LEATHER_CHESTPLATE)
+                    .setName("Plastron jaune")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.YELLOW)),
+    YELLOW_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "yellow-armor.legs",
+            new ItemBuilder(Material.LEATHER_LEGGINGS)
+                    .setName("Jambières jaunes")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.YELLOW)),
+    YELLOW_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "yellow-armor.feet",
+            new ItemBuilder(Material.LEATHER_BOOTS)
+                    .setName("Bottes jaunes")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.YELLOW)),
+
+    RAINBOW_ARMOR_HEAD(CosmeticType.ARMOR, CosmeticRarity.EPIC, "rainbow-armor.head",
+            new ItemBuilder(Material.LEATHER_HELMET)
+                    .setName("Casque arc-en-ciel")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.WHITE)),
+    RAINBOW_ARMOR_CHEST(CosmeticType.ARMOR, CosmeticRarity.EPIC, "rainbow-armor.chest",
+            new ItemBuilder(Material.LEATHER_CHESTPLATE)
+                    .setName("Plastron arc-en-ciel")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.WHITE)),
+    RAINBOW_ARMOR_LEGS(CosmeticType.ARMOR, CosmeticRarity.EPIC, "rainbow-armor.legs",
+            new ItemBuilder(Material.LEATHER_LEGGINGS)
+                    .setName("Jambières arc-en-ciel")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.WHITE)),
+    RAINBOW_ARMOR_FEET(CosmeticType.ARMOR, CosmeticRarity.EPIC, "rainbow-armor.feet",
+            new ItemBuilder(Material.LEATHER_BOOTS)
+                    .setName("Bottes arc-en-ciel")
+                    .allFlags()
+                    .setLeatherArmorColor(Color.WHITE));
 
     ;
 
@@ -107,5 +191,17 @@ public enum CosmeticSubType {
 
     public ItemBuilder getRepresentation() {
         return representation;
+    }
+
+    public static CosmeticSubType getFromId(String id){
+        for (CosmeticSubType cosmetic : values()) {
+            if(cosmetic.getId() == null){
+                continue;
+            }
+            if(cosmetic.getId().equals(id)){
+                return cosmetic;
+            }
+        }
+        return null;
     }
 }

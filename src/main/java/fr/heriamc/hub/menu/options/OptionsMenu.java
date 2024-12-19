@@ -28,6 +28,8 @@ public class OptionsMenu extends HeriaMenu {
     public void contents(Inventory inventory) {
         setBorder(inventory, DyeColor.RED.getWoolData());
 
+        inventory.setItem(4, new ItemBuilder(Material.REDSTONE_COMPARATOR).setName("§f» §cParamètres").build());
+
         HeriaPlayerSettings settings = hub.getBukkitAPI().getApi().getSettingsManager().get(getPlayer().getUniqueId());
 
         insertSettingItem(inventory, 20, new ItemBuilder(Material.PAPER).setName("§eMessages privés"), settings::setPrivateMessage, settings.getPrivateMessage());

@@ -12,8 +12,6 @@ import org.bukkit.inventory.Inventory;
 
 public class ShopRankConfirmMenu extends ConfirmMenu {
 
-    private final ShopRank shopRank;
-
     public ShopRankConfirmMenu(Player player, HeriaHub hub, HeriaMenu before, ShopRank shopRank) {
         super(player, ChatColor.stripColor(shopRank.getConverter().getPrefix()), hub.getBukkitAPI(), before, (actionPlayer) -> {
             actionPlayer.closeInventory();
@@ -25,7 +23,6 @@ public class ShopRankConfirmMenu extends ConfirmMenu {
             hub.getBukkitAPI().getApi().getPlayerManager().saveInPersistant(heriaAction);
             player.sendMessage("§a» Vous avez acheté le grade " + shopRank.getConverter().getName() + " ! Il est possible que certaines fonctionnalités demandent une reconnection au serveur.");
         });
-        this.shopRank = shopRank;
     }
 
     @Override

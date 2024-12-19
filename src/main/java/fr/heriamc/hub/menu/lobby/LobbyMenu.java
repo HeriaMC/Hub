@@ -32,7 +32,7 @@ public class LobbyMenu extends HeriaPaginationMenu<HeriaServer> {
         this.setBorder(inventory, DyeColor.PINK.getWoolData());
         inventory.setItem(4, new ItemBuilder(Material.ENDER_PORTAL_FRAME).setName("§f» §dSélecteur de lobby").build());
 
-        this.insertInteractItem(inventory, 49, new ItemBuilder(Material.DARK_OAK_DOOR_ITEM).setName("§c» Fermer le menu")
+        this.insertInteractItem(inventory, 48, new ItemBuilder(Material.DARK_OAK_DOOR_ITEM).setName("§c» Fermer le menu")
                 .onClick(event -> {
                     if(before != null){
                         hub.getBukkitAPI().getMenuManager().open(before);

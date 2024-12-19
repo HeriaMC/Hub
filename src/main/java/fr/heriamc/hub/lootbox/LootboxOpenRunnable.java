@@ -104,6 +104,9 @@ public class LootboxOpenRunnable implements Runnable {
                             .with(FireworkEffect.Type.BALL_LARGE).withFlicker().build());
                     meta.setPower(1);
                     firework.setFireworkMeta(meta);
+
+                    //TODO: give reward
+
                     this.playedFirework = true;
                 }
 

@@ -11,9 +11,6 @@ import org.bukkit.inventory.Inventory;
 
 public class ShopHostConfirmMenu extends ConfirmMenu {
 
-    private final int hosts;
-    private final float price;
-
     public ShopHostConfirmMenu(Player player, HeriaHub hub, HeriaMenu before, int hosts, float price) {
         super(player, hosts + " hosts", hub.getBukkitAPI(), before, actionPlayer -> {
             actionPlayer.closeInventory();
@@ -26,8 +23,6 @@ public class ShopHostConfirmMenu extends ConfirmMenu {
             hub.getBukkitAPI().getApi().getPlayerManager().saveInPersistant(heriaAction);
             player.sendMessage("§a» Vous avez acheté " + hosts + " supplémentaires !");
         });
-        this.hosts = hosts;
-        this.price = price;
     }
 
     @Override
